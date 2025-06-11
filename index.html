@@ -1,29 +1,46 @@
+<!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rec TV Web</title>
-    <style>
-        /* Sayfa geneli ve iframe için tam ekran stil */
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            overflow: hidden; /* Sayfanın taşmasını engeller */
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rec TV Web</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
 
-        iframe {
-            width: 100vw;  /* Tam ekran genişliği */
-            height: 100vh; /* Tam ekran yüksekliği */
-            border: none;
-        }
-    </style>
+    /* Black top bar */
+    .top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60px; /* adjust height as needed */
+      background-color: black;
+      z-index: 9999;
+    }
+
+    /* Fullscreen iframe, starts below the top bar */
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      border: none;
+    }
+  </style>
 </head>
 <body>
 
-    <!-- iframe, tüm ekranı kaplayacak şekilde yerleştirilmiştir -->
-    <iframe src="https://rectvtest.pages.dev/loading/" allowfullscreen></iframe>
+  <!-- Black bar always at the top -->
+  <div class="top-bar"></div>
 
+  <!-- Fullscreen iframe underneath -->
+  <iframe src="https://rectvtest.pages.dev/loading/" allowfullscreen></iframe>
 
 </body>
 </html>
